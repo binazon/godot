@@ -1,11 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://art/ennemi1.png" type="Texture" id=1]
 [ext_resource path="res://art/ennemi3.png" type="Texture" id=2]
 [ext_resource path="res://art/ennemi2.png" type="Texture" id=3]
+[ext_resource path="res://Ennemi.gd" type="Script" id=4]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "alien2",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "alien1",
@@ -15,25 +21,26 @@ animations = [ {
 "loop": true,
 "name": "alien3",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "alien2",
-"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 52.0
+radius = 45.3333
+height = 0.0
 
-[node name="Ennemi" type="Area2D"]
+[node name="Ennemi" type="RigidBody2D" groups=[
+"Ennemi",
+]]
+gravity_scale = 0.0
+script = ExtResource( 4 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.165898, 0.186227 )
+scale = Vector2( 0.11, 0.11 )
 frames = SubResource( 1 )
 animation = "alien3"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 0.75, 0.75 )
 shape = SubResource( 2 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
-scale = Vector2( 5.7, 6.05 )
+scale = Vector2( 4, 4 )
