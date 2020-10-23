@@ -1,0 +1,40 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "Joueur",
+"language": "GDScript",
+"path": "res://Joueur.gd"
+}, {
+"base": "Node2D",
+"class": "Missil",
+"language": "GDScript",
+"path": "res://Missil.gd"
+}, {
+"base": "Node2D",
+"class": "Protection",
+"language": "GDScript",
+"path": "res://Protection.gd"
+} ]
+_global_script_class_icons={
+"Joueur": "",
+"Missil": "",
+"Protection": ""
+}
+
+[application]
+
+config/name="spaceInvader"
+config/icon="res://icon.png"
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"

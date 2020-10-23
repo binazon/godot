@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Joueur.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Protection.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Ennemi.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Main.gd" type="Script" id=4]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="TimerProtection" type="Timer" parent="."]
+
+[node name="TimerEnnemi" type="Timer" parent="."]
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+
+[node name="Joueur" parent="." instance=ExtResource( 1 )]
+position = Vector2( 516.036, 558.58 )
+
+[node name="Protections" type="Node2D" parent="."]
+
+[node name="Protection" parent="Protections" instance=ExtResource( 2 )]
+position = Vector2( 800, 400 )
+
+[node name="Ennemis" type="Node2D" parent="."]
+
+[node name="Ennemi" parent="Ennemis" instance=ExtResource( 3 )]
+position = Vector2( 67.7083, 167.489 )
